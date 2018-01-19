@@ -471,7 +471,7 @@ namespace pal_vision_util
     Image input(&ipl);
     Image output;
     dctNormalization(input, output, coefficientsToCancel, roi);
-    normalizedImg = cv::Mat(output.getIplImg(), true);
+    normalizedImg = cv::cvarrToMat(output.getIplImg(), true);
     input.release();
   }
 
